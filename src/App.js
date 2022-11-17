@@ -2,7 +2,8 @@ import React from 'react';
 
 class App extends React.Component {
     render() {
-        return <div></div>;
+        const hello = <h1>Hello, World!</h1>;
+        return <div>{hello}</div>;
     }
 }
 
