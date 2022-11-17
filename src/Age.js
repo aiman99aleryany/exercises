@@ -1,12 +1,12 @@
 import React from 'react';
 
+const isAdult = (age) => age > 18;
+
 class Age extends React.Component {
     render() {
-        return (
-            <div>
-                <p>Your age is {this.props.age}</p>
-            </div>
-        );
+        const oldText = <p> Your age is {this.props.age}</p>;
+        const youngText = <p>You are very young</p>;
+        return <div>{isAdult(this.props.age) ? oldText : youngText}</div>;
     }
 }
 
