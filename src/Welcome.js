@@ -1,13 +1,16 @@
 import React from 'react';
 import Age from './Age';
-// if you pass props as a JSX expressions, it doesn't matter.. because you can still put JSX expression
-// inside the curly braces {}
+
+const isAdult = (age = 0) => age > 18;
+
+const showAge = (age) => isAdult(age) && <Age age={age} />;
+
 class Welcome extends React.Component {
     render() {
         return (
             <div>
                 <p>Welcome, {this.props.name}</p>
-                <Age age={this.props.age} />
+                {showAge(this.props.age)}
             </div>
         );
     }
