@@ -4,7 +4,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Welcome name="Aiman"></Welcome>
+                <Welcome></Welcome>
             </div>
         );
     }
