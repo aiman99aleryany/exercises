@@ -1,7 +1,7 @@
 import React from 'react';
 
-// it doesn't show anything if I don't pass the name prop and that's because
-// React doesn't render 'undefined' or 'null' or 'false'
+// if you pass props as a JSX expressions, it doesn't matter.. because you can still put JSX expression
+// inside the curly braces {}
 class Welcome extends React.Component {
     render() {
         return (
