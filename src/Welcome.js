@@ -10,7 +10,7 @@ class Welcome extends React.Component {
         return (
             <div>
                 <p>Welcome, {this.props.name}</p>
-                {showAge(this.props.age)}
+                {this.props.age && showAge(this.props.age)}
             </div>
         );
     }
