@@ -1,12 +1,10 @@
 import React from 'react';
 
-
-
-// Nothing happens because undefined does not get rendered.
+// It will print the JSX expression normally
 const promptName = (name) => <h1>{name}</h1>;
 class App extends React.Component {
     render() {
-        return <div>{promptName()}</div>;
+        return <div>{promptName(<strong>Hello</strong>)}</div>;
     }
 }
 

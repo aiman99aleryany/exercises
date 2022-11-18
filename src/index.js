@@ -6,5 +6,4 @@ import App from './App';
 const root = document.querySelector('#root');
 const myApp = <App />;
 
-
 ReactDOM.render(myApp, root);
