@@ -36,7 +36,7 @@ class UncontrolledLogin extends React.Component {
             <div>
                 <form action="" onSubmit={this.handleSubmit}>
                     <label htmlFor="username">Username: </label>
-                    <input name="username" type="text" />
+                    <input name="username" type="text" autoFocus={true}/>
                     <label htmlFor="password">Password: </label>
                     <input name="password" type="password" />
                     <label htmlFor="remember">Remember Me</label>
