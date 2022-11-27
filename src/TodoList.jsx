@@ -25,6 +25,14 @@ class TodoList extends React.Component {
         });
     };
 
+
+    resetAll = () => {
+        this.setState({
+            ...this.setState,
+            items: [],
+        }) 
+    }
+
     render() {
         return (
             <div>
@@ -40,6 +48,7 @@ class TodoList extends React.Component {
                     onChange={this.handleInputChange}
                 />
                 <button onClick={this.addnewItem}>Add Item</button>
+                <button onClick={this.resetAll}>Reset</button>
             </div>
         );
     }
