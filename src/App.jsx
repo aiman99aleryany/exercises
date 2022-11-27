@@ -1,21 +1,15 @@
 import React from 'react';
-import Login from './Login';
-
-
-
-
+import UncontrolledLogin from './UncontrolledLogin';
 
 class App extends React.Component {
-
-
     onLogin = (state) => {
-       console.log(state);
-    }
+        console.log(state);
+    };
 
     render() {
         return (
             <div>
-                <Login onLoginFn={this.onLogin}></Login>
+                <UncontrolledLogin onLoginFn={this.onLogin}></UncontrolledLogin>
             </div>
         );
     }
