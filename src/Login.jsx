@@ -1,7 +1,6 @@
 import React from 'react';
 
 class Login extends React.Component {
-
     constructor(props) {
         super(props);
         this._btnIsDisabled = true;
@@ -21,9 +20,9 @@ class Login extends React.Component {
     };
 
     shouldButtonDisable = () => {
-       this._btnIsDisabled = !(this.state.username && this.state.password);
+        this._btnIsDisabled = !(this.state.username && this.state.password);
         return this._btnIsDisabled;
-    }
+    };
 
     render() {
         return (
@@ -49,7 +48,12 @@ class Login extends React.Component {
                     checked={this.state.remember}
                     onChange={this.handleInput}
                 />
-                <button onClick={this.props.onLoginFn(this.state)} disabled={this.shouldButtonDisable()}>
+                <button
+                    onClick={() => {
+                        this.props.onLoginFn(this.state);
+                    }}
+                    disabled={this.shouldButtonDisable()}
+                >
                     Login
                 </button>
             </div>
