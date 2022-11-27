@@ -4,6 +4,7 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this._btnIsDisabled = true;
+        this._passwordIsShort = false;
     }
 
     state = {
@@ -22,6 +23,11 @@ class Login extends React.Component {
     shouldButtonDisable = () => {
         this._btnIsDisabled = !(this.state.username && this.state.password);
         return this._btnIsDisabled;
+    };
+
+    isPasswordShort = () => {
+        this._passwordIsShort = this.state.password.length < 8;
+        return this._passwordIsShort ? 'button--red' : 'button--green';
     };
 
     render() {
@@ -53,6 +59,7 @@ class Login extends React.Component {
                         this.props.onLoginFn(this.state);
                     }}
                     disabled={this.shouldButtonDisable()}
+                    className={this.isPasswordShort()}
                 >
                     Login
                 </button>
