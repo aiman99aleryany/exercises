@@ -28,7 +28,7 @@ class TodoList extends React.Component {
 
     resetAll = () => {
         this.setState({
-            ...this.setState,
+            ...this.state,
             items: [],
         }) 
     }
