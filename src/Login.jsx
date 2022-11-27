@@ -25,6 +25,15 @@ class Login extends React.Component {
         return this._btnIsDisabled;
     }
 
+    resetAllFields = () => {
+        this.setState((state) => {
+            for (let st in state) {
+                state[st] = '';
+            }
+            return state;
+        })
+    }
+
     render() {
         return (
             <div>
@@ -52,6 +61,7 @@ class Login extends React.Component {
                 <button onClick={this.props.onLoginFn(this.state)} disabled={this.shouldButtonDisable()}>
                     Login
                 </button>
+                <button onClick={this.resetAllFields}>Reset</button>
             </div>
         );
     }
