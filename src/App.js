@@ -1,8 +1,13 @@
 import React from 'react';
+import InteractiveWelcome from './InteractiveWelcome';
 
 class App extends React.Component {
     render() {
-        return <div></div>;
+        return (
+            <div>
+                <InteractiveWelcome></InteractiveWelcome>
+            </div>
+        );
     }
 }
 
