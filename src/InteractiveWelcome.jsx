@@ -6,7 +6,7 @@ class InteractiveWelcome extends React.Component {
         message: '',
     };
 
-    handleOnChange = () => {
+    handleOnChange = (event) => {
         this.setState({
             message: event.target.value,
         });
