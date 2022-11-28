@@ -30,11 +30,9 @@ class TodoList extends React.Component {
     };
 
     deleteItem = (index) => {
-        console.log(index);
         this.setState((state) => {
             const newState = state;
             newState.items.splice(index, 1); // only slice the index 1 stands for 1 element including the index
-            console.log(newState.items);
             return newState;
         });
     };
@@ -42,14 +40,7 @@ class TodoList extends React.Component {
     render() {
         return (
             <div>
-                <ul>
-                    {this.state.items.map((item, index) => (
-                        <li key={index}>
-                            {item}
-                            <button onClick={() => this.deleteItem(index)}>x</button>
-                        </li>
-                    ))}
-                </ul>
+                {this.props.render(this.state.items, this.deleteItem)}
                 <input
                     name="newItemField"
                     type="text"
