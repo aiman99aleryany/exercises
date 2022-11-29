@@ -1,64 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Login extends React.Component {
-    constructor(props) {
-        super(props);
-        this._btnIsDisabled = true;
-    }
+const INIT_STATE = {
+    username: '',
+    password: '',
+    remember: false,
+};
 
-    state = {
-        username: '',
-        password: '',
-        remember: false,
-    };
+const Login = ({ onLoginFn }) => {
+    const [state, setState] = useState(INIT_STATE);
+    const {username, password} = state;
+    
 
-    handleInput = (event) => {
-        this.setState(() => ({
+    const handleInput = (event) => {
+        setState((state) => ({
+            ...state,
             [event.target.name]:
                 event.target.name === 'remember' ? event.target.checked : event.target.value,
         }));
     };
 
-    shouldButtonDisable = () => {
-        this._btnIsDisabled = !(this.state.username && this.state.password);
-        return this._btnIsDisabled;
-    };
-
-    render() {
-        return (
-            <div>
-                <label htmlFor="username">Username: </label>
-                <input
-                    name="username"
-                    type="text"
-                    value={this.state.username}
-                    onChange={this.handleInput}
-                />
-                <label htmlFor="password">Password: </label>
-                <input
-                    name="password"
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.handleInput}
-                />
-                <label htmlFor="remember">Remember Me</label>
-                <input
-                    name="remember"
-                    type="checkbox"
-                    checked={this.state.remember}
-                    onChange={this.handleInput}
-                />
-                <button
-                    onClick={() => {
-                        this.props.onLoginFn(this.state);
-                    }}
-                    disabled={this.shouldButtonDisable()}
-                >
-                    Login
-                </button>
-            </div>
-        );
-    }
-}
+    return (
+        <div>
+            <label htmlFor="username">Username: </label>
+            <input name="username" type="text" value={state.username} onChange={handleInput} />
+            <label htmlFor="password">Password: </label>
+            <input name="password" type="password" value={state.password} onChange={handleInput} />
+            <label htmlFor="remember">Remember Me</label>
+            <input
+                name="remember"
+                type="checkbox"
+                checked={state.remember}
+                onChange={handleInput}
+            />
+            <button
+                onClick={() => {
+                    onLoginFn(state);
+                }}
+                disabled={!(username && password)}
+            >
+                Login
+            </button>
+        </div>
+    );
+};
 
 export default Login;
