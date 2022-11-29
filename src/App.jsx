@@ -3,7 +3,7 @@ import DisplayLanguage from './DisplayLanguage';
 import LanguageContext from './LanguageContext';
 
 const INIT_STATE = {
-    language: 'EN',
+    language: 'ENGLISH',
 };
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
     return (
         <div>
             <select value={state.language} onChange={handleLanguageSelection}>
-                <option value="EN">EN</option>
-                <option value="IT">IT</option>
+                <option value="ENGLISH">EN</option>
+                <option value="ITALIAN">IT</option>
             </select>
             <LanguageContext.Provider value={state.language}>
                 <DisplayLanguage></DisplayLanguage>
