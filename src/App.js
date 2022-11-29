@@ -5,7 +5,9 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <ClickCounter></ClickCounter>
+                <ClickCounter onCounterChange={(count) => {
+                        console.log(count);
+                }}></ClickCounter>
             </div>
         );
     }

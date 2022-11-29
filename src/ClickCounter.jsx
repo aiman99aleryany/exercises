@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 const INIT_STATE = {
     count: 0,
 };
 
-const ClickCounter = () => {
+const ClickCounter = ({ onCounterChange }) => {
     const [state, setState] = useState(INIT_STATE);
+
+    useEffect(() => {
+        onCounterChange(state.count);
+    }, [state.count]);
 
     const handleBtnClick = () => {
         setState((state) => ({ ...state, count: state.count + 1 }));
