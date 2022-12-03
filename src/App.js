@@ -1,14 +1,11 @@
 import React from 'react';
-import ClickCounter from './ClickCounter';
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <ClickCounter></ClickCounter>
-            </div>
-        );
-    }
-}
+const App = () => {
+    return (
+        <div>
+            <h1>Hello User, This is The Home Page</h1>
+        </div>
+    );
+};
 
 export default App;
