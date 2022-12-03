@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react';
-
-const INIT_DATA_VALUE = null;
+import React from 'react';
+import useGithubUser from './useGithubUser';
 
 const GithubUser = ({ username }) => {
-    const [data, setData] = useState(INIT_DATA_VALUE);
-
-    useEffect(() => {
-        fetch(`https://api.github.com/users/${username}`)
-            .then((response) => response.json())
-            .then((json) => setData(json))
-            .catch((error) => console.log(error))
-            .finally();
-    }, [username]);
+    const [userData, fetchData] = useGithubUser(username);
 
     return (
         <div>
-            {data &&
-                Object.entries(data).map((dataPair, i) => (
+            <button onClick={fetchData}>fetch User Data</button>
+            {userData &&
+                Object.entries(userData).map((dataPair, i) => (
                     <div key={i}>
                         {dataPair[0]}: {dataPair[1]}
                     </div>
