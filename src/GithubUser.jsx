@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 const INIT_DATA_VALUE = null;
 
 const GithubUser = ({ username }) => {
@@ -10,17 +11,19 @@ const GithubUser = ({ username }) => {
             .then((response) => response.json())
             .then((json) => setData(json))
             .catch((error) => console.log(error))
-            .finally();
     }, [username]);
+
+    
+    const renderData = () => {
+        return Object.entries(data).map((dataPair, i) => {
+            return <li key={i}>{dataPair[0]} :::: {dataPair[1]}</li>
+        });
+    }
+
 
     return (
         <div>
-            {data &&
-                Object.entries(data).map((dataPair, i) => (
-                    <div key={i}>
-                        {dataPair[0]}: {dataPair[1]}
-                    </div>
-                ))}
+            {data && renderData()}
         </div>
     );
 };
