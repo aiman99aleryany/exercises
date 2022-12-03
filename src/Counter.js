@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-class Counter extends React.Component {
-    state = {
-        count: 0,
-    };
+const STATE_INIT_VALUE = 0;
 
-    constructor(props) {
-        super(props);
-        setInterval(() => {
-            this.setState((state) => ({ count: state.count + 1 }));
-        }, 1000);
-    }
+const Counter = () => {
+    const [state, setState] = useState(STATE_INIT_VALUE);
 
-    render() {
-        return (
-            <div>
-                <h1>{this.state.count}</h1>
-            </div>
-        );
-    }
-}
+    useEffect(() => {
+        const counterInterval = setInterval(() => setState((state) => state + 1), 1000);
+
+        return () => {
+            clearInterval(counterInterval);
+        };
+    }, []);
+
+    return (
+        <div>
+            <h1>{state}</h1>
+        </div>
+    );
+};
 
 export default Counter;
