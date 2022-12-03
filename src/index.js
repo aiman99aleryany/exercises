@@ -1,8 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import {createRoot} from 'react-dom/client';
+import RouteApp from './RouteApp';
 
-const root = document.querySelector('#root');
-const myApp = <App />;
+const run = () => {
+    const container = document.querySelector('#root');
+    const root = createRoot(container);
+    const app = <RouteApp />;
 
-ReactDOM.render(myApp, root);
+    root.render(app);
+}
+
+// RUN APPLICATION
+run();
+
+
+

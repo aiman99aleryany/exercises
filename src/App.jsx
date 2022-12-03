@@ -1,14 +1,12 @@
 import React from 'react';
 import Weclome from './Welcome';
 
-class App extends React.Component {
-    render() {
+const App = ({name}) => {
         return (
             <div>
-                <Weclome name="Aiman"></Weclome>
+                <Weclome name={name}></Weclome>
             </div>
         );
     }
-}
 
 export default App;
