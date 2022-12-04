@@ -10,6 +10,7 @@ const indexRoute = {
     element: <App />,
 };
 
+// Index is already implemented here in case no user was selected/added.
 const usersRoute = {
     path: 'users',
     element: <GithubUserList />,
