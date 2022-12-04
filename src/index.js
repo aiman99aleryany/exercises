@@ -1,12 +1,12 @@
 import React from 'react';
 import {createRoot}from 'react-dom/client';
-import App from './App';
+import RouteRoot from './RouteRoot';
 
 
 const run = () => {
     const container = document.querySelector('#root');
     const root = createRoot(container);
-    const myApp = <App></App>;
+    const myApp = <RouteRoot />;
     root.render(myApp);
 }
 
