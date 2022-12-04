@@ -1,17 +1,11 @@
 import React from 'react';
-import GithubUser from './GithubUser';
 
-const MY_GITHUB_ACCOUNT = 'aiman99aleryany';
-
-
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <GithubUser username={MY_GITHUB_ACCOUNT}></GithubUser>
-            </div>
-        );
-    }
-}
+const App = () => {
+    return (
+        <div>
+            <h1>This is the main page</h1>
+        </div>
+    );
+};
 
 export default App;
