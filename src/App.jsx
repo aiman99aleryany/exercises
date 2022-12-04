@@ -1,10 +1,9 @@
 import React from 'react';
-import GithubUserList from './GithubUserList';
 
 const App = () => {
     return (
         <div>
-            <GithubUserList></GithubUserList>
+            <h1>This is the main page</h1>
         </div>
     );
 };

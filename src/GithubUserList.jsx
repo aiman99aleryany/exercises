@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import GithubUser from './GithubUser';
+import { Link } from 'react-router-dom';
 
 const GithubUserList = () => {
     const [input, setInput] = useState('');
     const [users, setUsers] = useState([]);
     const [detials, setDetials] = useState(null);
+
     const handleInput = (event) => {
         setInput(event.target.value);
     };
@@ -37,7 +38,7 @@ const GithubUserList = () => {
                     <div key={i}>
                         <h1>{user} Data:</h1>
                         <ul>
-                            <GithubUser username={user}></GithubUser>
+                            <Link to={`/users/${user}`}>Link to {user} data</Link>
                         </ul>
                     </div>
                 );
