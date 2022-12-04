@@ -6,7 +6,7 @@ const fetchData = async (url) => {
     return json;
 };
 
-const useGithubUser = (username = '') => {
+const useGithubUser = (username = null) => {
     const { data, mutate } = useSWR(`https://api.github.com/users/${username}`, fetchData);
 
     const fetchUserData = () => {
